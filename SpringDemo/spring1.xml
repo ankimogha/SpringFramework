@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/> <!-- All the annotation -->
+    <!--<bean id="triangle" class="Triangle">
+        <property name="pointA" ref="pointA" />
+        <property name="pointB" ref="pointB" />
+        <property name="pointC" ref="pointC" />
+    </bean>-->
+
+    <!--<bean id="circle" class="Circle">
+
+    </bean>-->
+
+    <bean id="pointA" class="Point">
+        <qualifier value="circlePoint"/>
+        <constructor-arg value="0"/>
+        <constructor-arg value="0"/>
+    </bean>
+    <bean id="pointB" class="Point">
+        <constructor-arg value="10"/>
+        <constructor-arg value="0"/>
+    </bean>
+    <bean id="center" class="Point">
+        <constructor-arg value="0"/>
+        <constructor-arg value="10"/>
+    </bean>
+
+    <context:annotation-config /> <!-- Shortcut for defining all the annotation related to bean post processor configuration -->
+    <context:component-scan base-package="Circle" />
+    <context:component-scan base-package="MyEventListener" />
+</beans>

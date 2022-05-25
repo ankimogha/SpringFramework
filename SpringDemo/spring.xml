@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<!-- autowire used for auto wiring the data members -->
+<beans>
+    <bean id="triangle" class="Triangle" autowire="byName">
+    </bean>
+
+        <!-- SETTER Injection Example
+        <property name="type" value="Equilateral" /> -->
+
+        <!-- Constructor Injection Example
+        <constructor-arg value="Equilateral" />
+        <constructor-arg value="20" /> -->
+
+        <!-- Object Injection Example
+        <constructor-arg ref="point1" />
+        <constructor-arg ref="point2" />
+        <constructor-arg ref="point3" />
+    </bean>
+    <bean id="point1" class="Point">
+        <constructor-arg value="0" />
+        <constructor-arg value="0" />
+    </bean>
+    <bean id="point2" class="Point">
+        <constructor-arg value="0" />
+        <constructor-arg value="10" />
+    </bean>
+    <bean id="point3" class="Point">
+        <constructor-arg value="10" />
+        <constructor-arg value="0" /> -->
+
+        <!--Inner Bean Example
+        <constructor-arg ref="point1" />
+        <constructor-arg>
+            <bean class="Point">
+                <constructor-arg value="0" />
+                <constructor-arg value="10" />
+            </bean>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="Point">
+                <constructor-arg value="10" />
+                <constructor-arg value="0" />
+            </bean>
+        </constructor-arg>
+    </bean>
+    <bean id="point1" class="Point">
+        <constructor-arg value="0" />
+        <constructor-arg value="0" />
+    </bean> -->
+        <!--Alias Example
+        <constructor-arg ref="point1" />
+        <constructor-arg>
+            <bean class="Point">
+                <constructor-arg value="0" />
+                <constructor-arg value="10" />
+            </bean>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="Point">
+                <constructor-arg value="10" />
+                <constructor-arg value="0" />
+            </bean>
+        </constructor-arg>
+    </bean>
+    <bean id="point1" class="Point">
+        <constructor-arg value="0" />
+        <constructor-arg value="0" />
+    </bean>
+    <alias name="triangle" alias="triangle-alias"/> -->
+
+        <!-- List (Collection) Example
+        <property name="points">
+            <list>
+                <ref bean="point1" />
+                <ref bean="point2" />
+                <ref bean="point3" />
+            </list>
+        </property>
+    </bean>
+    <bean id="point1" class="Point">
+        <constructor-arg value="0" />
+        <constructor-arg value="0" />
+    </bean>
+    <bean id="point2" class="Point">
+        <constructor-arg value="0" />
+        <constructor-arg value="10" />
+    </bean>
+    <bean id="point3" class="Point">
+        <constructor-arg value="10" />
+        <constructor-arg value="0" /> -->
+    <bean id="pointA" class="Point">
+    <constructor-arg value="0" /> <!-- Example of placeholder for properties -->
+    <constructor-arg value="0" /> <!-- Example of placeholder for properties -->
+    </bean>
+    <bean id="pointB" class="Point">
+    <constructor-arg value="10" />
+    <constructor-arg value="0" />
+    </bean>
+    <bean id="pointC" class="Point">
+    <constructor-arg value="0" />
+    <constructor-arg value="10" />
+    </bean>
+
+</beans>
